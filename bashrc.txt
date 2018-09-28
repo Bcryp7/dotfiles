@@ -115,14 +115,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-
-# Personal Functions
-
-# *Remove a Service/App
-remove() {
-	sudo apt remove -y "$1" && 
-	sudo apt purge -y "$1" && 
-	sudo apt-get autoremove -y && 
-	sudo apt-get clean
-}
