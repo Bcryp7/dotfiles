@@ -7,6 +7,7 @@ alias update="sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dis
 alias install="sudo apt-get install -y";
 alias sshkey="cat ~/.ssh/id_ecdsa.pub | xclip -sel clip && echo 'Copied to Clipboard.'";
 alias c="clear";
+alias x="exit";
 alias undeb="sudo dpkg -i";
 alias fnd="find . -type f -name";
 
