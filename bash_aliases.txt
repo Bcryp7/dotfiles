@@ -17,7 +17,7 @@ alias downl="cd ~/Downloads";
 
 # Misc
 alias timer='echo "Timer started. Stop with Ctrl-D." && date "+%a, %d %b %H:%M:%S" && time cat && date "+%a, %d %b %H:%M:%S"';
-alias myips="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | awk '{print $2}' && echo "public: " && dig +short myip.opendns.com @resolver1.opendns.com";
+alias myips="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | awk '{print $2}' && echo 'public:' &&  dig +short myip.opendns.com @resolver1.opendns.com";
 alias publicip="curl -s http://checkip.dyndns.com/ | sed 's/[^0-9\.]//g'";
 alias weather="curl -4 wttr.in/${1:-mexicali}";
 
