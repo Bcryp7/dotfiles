@@ -1,0 +1,63 @@
+# Execute: sudo cp bash_aliases.txt ~/.bash_aliases
+
+#==== Linux Aliases ====#
+
+# Utils
+alias update="sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y";
+alias install="sudo apt-get install -y";
+alias sshkey="cat ~/.ssh/id_ecdsa.pub | xclip -sel clip && echo 'Copied to Clipboard.'";
+alias c="clear";
+alias undeb="sudo dpkg -i";
+alias fnd="find . -type f -name";
+
+# Navigation
+alias ..="cd ..";
+alias repos="cd ~/Repositories";
+alias downl="cd ~/Downloads";
+
+# Misc
+alias timer='echo "Timer started. Stop with Ctrl-D." && date "+%a, %d %b %H:%M:%S" && time cat && date "+%a, %d %b %H:%M:%S"';
+alias myips="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | awk '{print $2}' && echo "public: " && dig +short myip.opendns.com @resolver1.opendns.com";
+alias publicip="curl -s http://checkip.dyndns.com/ | sed 's/[^0-9\.]//g'";
+alias weather="curl -4 wttr.in/${1:-mexicali}";
+
+#==== Laravel Aliases ====#
+
+alias laravel="composer create-project --prefer-dist laravel/laravel";
+alias serve="php artisan serve";
+alias pa="php artisan";
+alias migreset="php artisan migrate:reset";
+alias fresh="php artisan migrate:refresh --seed";
+alias phpu="./vendor/bin/phpunit --testdox";
+alias dusk="php artisan dusk --testdox";
+alias serve-dusk="php artisan serve --env=dusk.local";
+
+#==== Git Aliases ====#
+
+alias add="git add .";
+alias gitst="git status";
+alias commit="git commit -m";
+alias gac="git add .; git commit -m"
+alias nah="git reset --hard;git clean -df";
+alias push="git push origin";
+alias gch="git checkout";
+alias gbr="git branch";
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
+
+#==== Personal Functions ====#
+
+# Remove a Service/App
+remove() {
+	sudo apt remove -y "$1" && 
+	sudo apt purge -y "$1" && 
+	sudo apt-get autoremove -y && 
+	sudo apt-get clean
+}
+
+
+# Manage Services
+rserv() { sudo service "$1" restart; }
+sserv() { sudo service "$1" status; }
+
+# Create a new directory and enter it
+mkd() { mkdir "$1" && cd "$1"; }
