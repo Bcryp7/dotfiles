@@ -3,7 +3,7 @@
 #==== Linux Aliases ====#
 
 # Utils
-alias update="sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y";
+alias update="sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y;sudo apt autoremove -y;";
 alias install="sudo apt-get install -y";
 alias sshkey="cat ~/.ssh/id_ecdsa.pub | xclip -sel clip && echo 'Copied to Clipboard.'";
 alias c="clear";
