@@ -34,6 +34,9 @@ alias phpu="./vendor/bin/phpunit --testdox";
 alias dusk="php artisan dusk --testdox";
 alias serve-dusk="php artisan serve --env=dusk.local";
 
+#==== MySQL Aliases ====#
+alias mysqlogin="mysql -uroot -proot";
+
 #==== Git Aliases ====#
 
 alias add="git add .";
