@@ -31,6 +31,7 @@ alias pa="php artisan";
 alias migreset="php artisan migrate:reset";
 alias fresh="php artisan migrate:refresh --seed";
 alias phpu="./vendor/bin/phpunit --testdox";
+alias phpu-html="./vendor/bin/phpunit --coverage-html=html";
 alias dusk="php artisan dusk --testdox";
 alias serve-dusk="php artisan serve --env=dusk.local";
 
@@ -66,3 +67,6 @@ sserv() { sudo service "$1" status; }
 
 # Create a new directory and enter it
 mkd() { mkdir "$1" && cd "$1"; }
+
+# Geolocate a public IP
+locate-ip() { curl -s http://ipinfo.io/ $(dig +short "$1") | jq ; }
